@@ -1,8 +1,8 @@
+targetScope = 'subscription'
 @secure()
 param token string
 @secure()
 param password string
-targetScope = 'subscription'
 
 // resource azuremonitoreventrg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   name: 'azuremonitoreventrg'
