@@ -1,5 +1,6 @@
 @secure()
 param token string
+param password string
 targetScope = 'subscription'
 
 // resource azuremonitoreventrg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
@@ -72,10 +73,18 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module storage 'storage.bicep' = {
-  name: 'storage'
+module mysql 'mysql.bicep' = {
+  name: 'mysql'
   scope: rg
+  params: {
+    token: password
+  }
 }
+
+// module storage 'storage.bicep' = {
+//   name: 'storage'
+//   scope: rg
+// }
 
 // module streamanalytics 'streamanalytics.bicep' = {
 //   name: 'streamanalytics'
