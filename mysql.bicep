@@ -11,14 +11,9 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
     name: 'Standard_B1s'
     tier: 'Burstable'
   }
-  // identity: {
-  //   type: 'UserAssigned'
-  //   userAssignedIdentities: {}
-  // }
   properties: {
     administratorLogin: 'operations'
     administratorLoginPassword: password
-    // availabilityZone: '1'
     backup: {
       backupRetentionDays: 1
       geoRedundantBackup: 'Disabled'
@@ -27,14 +22,7 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
     highAvailability: {
       mode: 'Disabled'
     }
-    // maintenanceWindow: {
-    //   customWindow: 'Disabled'
-    //   dayOfWeek: 0
-    //   startHour: 0
-    //   startMinute: 0
-    // }
     network: {}
-    // publicNetworkAccess: 'Disabled'
     replicationRole: 'None'
     storage: {
       autoGrow: 'Enabled'
@@ -45,15 +33,6 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
   }
 }
 
-// resource mysql_information_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-//   parent: mysql_server
-//   name: '${prefix}mysqlinformationschema'
-//   properties: {
-//     charset: 'utf8'
-//     collation: 'utf8_general_ci'
-//   }
-// }
-
 resource mysql_database 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
   name: '${prefix}mysqldb'
   parent: mysql_server
@@ -62,24 +41,6 @@ resource mysql_database 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-
     collation: 'utf8_general_ci'
   }
 }
-
-// resource mysql_performance_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-//   parent: mysql_server
-//   name: '${prefix}mysqlperf'
-//   properties: {
-//     charset: 'utf8mb4'
-//     collation: 'utf8mb4_0900_ai_ci'
-//   }
-// }
-
-// resource mysql_sys 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-//   parent: mysql_server
-//   name: '${prefix}mysqlsys'
-//   properties: {
-//     charset: 'utf8mb4'
-//     collation: 'utf8mb4_0900_ai_ci'
-//   }
-// }
 
 resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules@2021-05-01' = {
   name: '${prefix}mysqlfwrule'
