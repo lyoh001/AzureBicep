@@ -3,7 +3,7 @@ on: [push]
 
 env:
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
-  AZURE_DEPLOYMENT_NAME: "vickk75"
+  AZURE_DEPLOYMENT_NAME: "vickk76"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "centralus"
 
@@ -25,4 +25,4 @@ jobs:
       with:
         inlineScript: |
           az account set --subscription ${{ env.AZURE_SUBSCRIPTION }}
-          az deployment sub create -f ./main.bicep -n ${{ env.AZURE_DEPLOYMENT_NAME }} -l ${{ env.AZURE_DEPLOYMENT_REGION }} -p token=${{ secrets.GIT_HUB_CREDENTIALS }} -p password=${{ secrets.ADMIN_CREDENTIALS }}
+          az deployment sub create -f ./main.bicep -n ${{ env.AZURE_DEPLOYMENT_NAME }} -l ${{ env.AZURE_DEPLOYMENT_REGION }} -p token=${{ secrets.GIT_HUB_CREDENTIALS }} password=${{ secrets.ADMIN_CREDENTIALS }}
