@@ -8,7 +8,7 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
   name: '${prefix}mysqlserver'
   location: location
   sku: {
-    // capacity: 2
+    capacity: 2
     name: 'Standard_B1s'
     tier: 'Burstable'
   }
@@ -35,7 +35,7 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
     //   startMinute: 0
     // }
     network: {}
-    // publicNetworkAccess: 'Enabled'
+    publicNetworkAccess: 'Disabled'
     replicationRole: 'None'
     storage: {
       autoGrow: 'Enabled'
