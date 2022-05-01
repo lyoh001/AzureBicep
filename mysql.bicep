@@ -39,47 +39,47 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
   }
 }
 
-resource mysql_information_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-  parent: mysql_server
-  name: '${prefix}mysqlinformationschema'
-  properties: {
-    charset: 'utf8'
-    collation: 'utf8_general_ci'
-  }
-}
+// resource mysql_information_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
+//   parent: mysql_server
+//   name: '${prefix}mysqlinformationschema'
+//   properties: {
+//     charset: 'utf8'
+//     collation: 'utf8_general_ci'
+//   }
+// }
 
-resource mysql_database 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-  parent: mysql_server
-  name: '${prefix}mysqldb'
-  properties: {
-    charset: 'utf8mb4'
-    collation: 'utf8mb4_0900_ai_ci'
-  }
-}
+// resource mysql_database 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
+//   parent: mysql_server
+//   name: '${prefix}mysqldb'
+//   properties: {
+//     charset: 'utf8mb4'
+//     collation: 'utf8mb4_0900_ai_ci'
+//   }
+// }
 
-resource mysql_performance_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-  parent: mysql_server
-  name: '${prefix}mysqlperf'
-  properties: {
-    charset: 'utf8mb4'
-    collation: 'utf8mb4_0900_ai_ci'
-  }
-}
+// resource mysql_performance_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
+//   parent: mysql_server
+//   name: '${prefix}mysqlperf'
+//   properties: {
+//     charset: 'utf8mb4'
+//     collation: 'utf8mb4_0900_ai_ci'
+//   }
+// }
 
-resource mysql_sys 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
-  parent: mysql_server
-  name: '${prefix}mysqlsys'
-  properties: {
-    charset: 'utf8mb4'
-    collation: 'utf8mb4_0900_ai_ci'
-  }
-}
+// resource mysql_sys 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
+//   parent: mysql_server
+//   name: '${prefix}mysqlsys'
+//   properties: {
+//     charset: 'utf8mb4'
+//     collation: 'utf8mb4_0900_ai_ci'
+//   }
+// }
 
-resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules@2021-05-01' = {
-  parent: mysql_server
-  name: '${prefix}mysqlfwrule'
-  properties: {
-    startIpAddress: '120.21.210.94'
-    endIpAddress: '120.21.210.94'
-  }
-}
+// resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules@2021-05-01' = {
+//   parent: mysql_server
+//   name: '${prefix}mysqlfwrule'
+//   properties: {
+//     startIpAddress: '120.21.210.94'
+//     endIpAddress: '120.21.210.94'
+//   }
+// }
