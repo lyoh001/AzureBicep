@@ -4,40 +4,40 @@ param prefix string = replace(resourceGroup().name, 'rg', '')
 @secure()
 param password string
 
-// resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
-//   name: '${prefix}mysqlserver'
-//   location: location
-//   sku: {
-//     name: 'Standard_B1s'
-//     tier: 'Burstable'
-//   }
-//   properties: {
-//     administratorLogin: 'operations'
-//     administratorLoginPassword: password
-//     storage: {
-//       storageSizeGB: 20
-//       iops: 360
-//       autoGrow: 'Enabled'
-//     }
-//     version: '8.0.21'
-//     availabilityZone: '1'
-//     maintenanceWindow: {
-//       customWindow: 'Disabled'
-//       dayOfWeek: 0
-//       startHour: 0
-//       startMinute: 0
-//     }
-//     replicationRole: 'None'
-//     network: {}
-//     backup: {
-//       backupRetentionDays: 1
-//       geoRedundantBackup: 'Disabled'
-//     }
-//     highAvailability: {
-//       mode: 'Disabled'
-//     }
-//   }
-// }
+resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
+  name: '${prefix}mysqlserver'
+  location: location
+  sku: {
+    name: 'Standard_B1s'
+    tier: 'Burstable'
+  }
+  properties: {
+    administratorLogin: 'operations'
+    administratorLoginPassword: password
+    storage: {
+      storageSizeGB: 20
+      iops: 360
+      autoGrow: 'Enabled'
+    }
+    version: '8.0.21'
+    availabilityZone: '1'
+    maintenanceWindow: {
+      customWindow: 'Disabled'
+      dayOfWeek: 0
+      startHour: 0
+      startMinute: 0
+    }
+    replicationRole: 'None'
+    network: {}
+    backup: {
+      backupRetentionDays: 1
+      geoRedundantBackup: 'Disabled'
+    }
+    highAvailability: {
+      mode: 'Disabled'
+    }
+  }
+}
 
 // resource mysql_information_schema 'Microsoft.DBforMySQL/flexibleServers/databases@2021-05-01' = {
 //   parent: mysql_server
@@ -75,11 +75,11 @@ param password string
 //   }
 // }
 
-// resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules@2021-05-01' = {
-//   parent: mysql_server
-//   name: '${prefix}mysqlfwrule'
-//   properties: {
-//     startIpAddress: '120.21.210.94'
-//     endIpAddress: '120.21.210.94'
-//   }
-// }
+resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules@2021-05-01' = {
+  parent: mysql_server
+  name: '${prefix}mysqlfwrule'
+  properties: {
+    startIpAddress: '120.21.210.94'
+    endIpAddress: '120.21.210.94'
+  }
+}
