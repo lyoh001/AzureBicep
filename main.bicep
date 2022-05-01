@@ -1,7 +1,7 @@
 @secure()
 param token string
 @secure()
-param credential string
+param password string
 targetScope = 'subscription'
 
 // resource azuremonitoreventrg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
@@ -78,7 +78,7 @@ module mysql 'mysql.bicep' = {
   name: 'mysql'
   scope: rg
   params: {
-    credential: credential
+    password: password
   }
 }
 
