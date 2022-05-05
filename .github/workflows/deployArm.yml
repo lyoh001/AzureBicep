@@ -3,7 +3,7 @@ on: [push]
 
 env:
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
-  AZURE_DEPLOYMENT_NAME: "azuremysql"
+  AZURE_DEPLOYMENT_NAME: "vickk73"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "centralus"
 
