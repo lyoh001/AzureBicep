@@ -8,11 +8,7 @@ resource cosmos 'Microsoft.DocumentDB/databaseAccounts@2021-04-15' = {
   kind: 'GlobalDocumentDB'
   properties: {
     enableFreeTier: true
-    capabilities: [
-      {
-        name: 'EnableTable'
-      }
-    ]
+    databaseAccountOfferType: 'Standard'
     consistencyPolicy: {
       defaultConsistencyLevel: 'Session'
     }
@@ -23,7 +19,6 @@ resource cosmos 'Microsoft.DocumentDB/databaseAccounts@2021-04-15' = {
         isZoneRedundant: false
       }
     ]
-    databaseAccountOfferType: 'Standard'
     enableAutomaticFailover: false
     enableMultipleWriteLocations: false
   }
