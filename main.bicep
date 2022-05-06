@@ -24,15 +24,15 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module automationaccount 'automationaccount.bicep' = {
-//   name: 'automationaccount'
-//   scope: rg
-// }
-
-module cosmosdb 'cosmosdb.bicep' = {
-  name: 'cosmosdb'
+module automationaccount 'automationaccount.bicep' = {
+  name: 'automationaccount'
   scope: rg
 }
+
+// module cosmosdb 'cosmosdb.bicep' = {
+//   name: 'cosmosdb'
+//   scope: rg
+// }
 
 // module datafactory 'datafactory.bicep' = {
 //   name: 'datafactory'
