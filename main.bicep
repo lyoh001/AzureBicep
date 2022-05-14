@@ -44,10 +44,10 @@ module automationaccount 'automationaccount.bicep' = {
 //   scope: rg
 // }
 
-// module funcapp 'funcapp.bicep' = {
-//   name: 'funcapp'
-//   scope: rg
-// }
+module funcapp 'funcapp.bicep' = {
+  name: 'funcapp'
+  scope: rg
+}
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -59,10 +59,10 @@ module automationaccount 'automationaccount.bicep' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -82,10 +82,10 @@ module automationaccount 'automationaccount.bicep' = {
 //   }
 // }
 
-// module storage 'storage.bicep' = {
-//   name: 'storage'
-//   scope: rg
-// }
+module storage 'storage.bicep' = {
+  name: 'storage'
+  scope: rg
+}
 
 // module streamanalytics 'streamanalytics.bicep' = {
 //   name: 'streamanalytics'
