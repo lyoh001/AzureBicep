@@ -24,10 +24,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module automationaccount 'automationaccount.bicep' = {
-//   name: 'automationaccount'
-//   scope: rg
-// }
+module automationaccount 'automationaccount.bicep' = {
+  name: 'automationaccount'
+  scope: rg
+}
 
 // module cosmosdb 'cosmosdb.bicep' = {
 //   name: 'cosmosdb'
@@ -44,10 +44,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module funcapp 'funcapp.bicep' = {
-  name: 'funcapp'
-  scope: rg
-}
+// module funcapp 'funcapp.bicep' = {
+//   name: 'funcapp'
+//   scope: rg
+// }
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -59,10 +59,10 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-module logicapps 'logicapps.bicep' = {
-  name: 'logicapps'
-  scope: rg
-}
+// module logicapps 'logicapps.bicep' = {
+//   name: 'logicapps'
+//   scope: rg
+// }
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -82,10 +82,10 @@ module logicapps 'logicapps.bicep' = {
 //   }
 // }
 
-module storage 'storage.bicep' = {
-  name: 'storage'
-  scope: rg
-}
+// module storage 'storage.bicep' = {
+//   name: 'storage'
+//   scope: rg
+// }
 
 // module streamanalytics 'streamanalytics.bicep' = {
 //   name: 'streamanalytics'
