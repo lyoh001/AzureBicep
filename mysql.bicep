@@ -46,7 +46,7 @@ resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules
   name: '${prefix}mysqlfwrule'
   parent: mysql_server
   properties: {
-    startIpAddress: '120.21.210.94'
-    endIpAddress: '120.21.210.94'
+    startIpAddress: '120.21.98.50'
+    endIpAddress: '120.21.98.50'
   }
 }

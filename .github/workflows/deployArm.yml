@@ -3,7 +3,7 @@ on: [push]
 
 env:
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
-  AZURE_DEPLOYMENT_NAME: "datapipeline"
+  AZURE_DEPLOYMENT_NAME: "dpv1"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "centralus"
 
