@@ -34,10 +34,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module datafactory 'datafactory.bicep' = {
-  name: 'datafactory'
-  scope: rg
-}
+// module datafactory 'datafactory.bicep' = {
+//   name: 'datafactory'
+//   scope: rg
+// }
 
 // module eventhub 'eventhub.bicep' = {
 //   name: 'eventhub'
@@ -74,18 +74,18 @@ module datafactory 'datafactory.bicep' = {
 //   scope: rg
 // }
 
-module mysql 'mysql.bicep' = {
-  name: 'mysql'
-  scope: rg
-  params: {
-    password: password
-  }
-}
+// module mysql 'mysql.bicep' = {
+//   name: 'mysql'
+//   scope: rg
+//   params: {
+//     password: password
+//   }
+// }
 
-module storage 'storage.bicep' = {
-  name: 'storage'
-  scope: rg
-}
+// module storage 'storage.bicep' = {
+//   name: 'storage'
+//   scope: rg
+// }
 
 // module streamanalytics 'streamanalytics.bicep' = {
 //   name: 'streamanalytics'
@@ -105,10 +105,10 @@ module storage 'storage.bicep' = {
 //   scope: rg
 // }
 
-// module vmwindows 'vmwindows.bicep' = {
-//   name: 'vmwindows'
-//   scope: rg
-// }
+module vmwindows 'vmwindows.bicep' = {
+  name: 'vmwindows'
+  scope: rg
+}
 
 // module vmml 'vmml.bicep' = {
 //   name: 'vmml'
