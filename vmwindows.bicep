@@ -1,13 +1,13 @@
 param location string = resourceGroup().location
 param prefix string = replace(resourceGroup().name, 'rg', '')
 // param prefix string = concat(replace(resourceGroup().name, 'rg', ''), substring(newGuid(), 0, 7))
+@secure()
+param password string
 
 param dnsLabelPrefix string = toLower('${prefix}-${uniqueString(resourceGroup().id, prefix)}')
 param windowsOSVersion string = '20h2-ent'
 param vmSize string = 'Standard_B2s'
-param adminPasswordOrKey string = 'password-here'
-var myIpAddress = '120.*.*.*'
-var osDiskType = 'Standard_LRS'
+var myIpAddress = '120.21.36.70'
 var subnetAddressPrefix = '10.1.0.0/24'
 var addressPrefix = '10.1.0.0/16'
 
@@ -102,7 +102,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2019-07-01' = {
     osProfile: {
       computerName: '${prefix}vm'
       adminUsername: 'Operations'
-      adminPassword: adminPasswordOrKey
+      adminPassword: password
     }
     hardwareProfile: {
       vmSize: vmSize

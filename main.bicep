@@ -108,6 +108,9 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 module vmwindows 'vmwindows.bicep' = {
   name: 'vmwindows'
   scope: rg
+  params: {
+    password: password
+  }
 }
 
 // module vmml 'vmml.bicep' = {
