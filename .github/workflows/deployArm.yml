@@ -3,9 +3,9 @@ on: [push]
 
 env:
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
-  AZURE_DEPLOYMENT_NAME: "vickk82"
-  # AZURE_DEPLOYMENT_REGION: "australiaeast"
-  AZURE_DEPLOYMENT_REGION: "australiasoutheast"
+  AZURE_DEPLOYMENT_NAME: "vickk83"
+  AZURE_DEPLOYMENT_REGION: "australiaeast"
+  # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
   # AZURE_DEPLOYMENT_REGION: "centralus"
 
 jobs:
