@@ -19,10 +19,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   location: deployment().location
 }
 
-module apim 'apim.bicep' = {
-  name: 'apim'
-  scope: rg
-}
+// module apim 'apim.bicep' = {
+//   name: 'apim'
+//   scope: rg
+// }
 
 // module automationaccount 'automationaccount.bicep' = {
 //   name: 'automationaccount'
@@ -44,10 +44,10 @@ module apim 'apim.bicep' = {
 //   scope: rg
 // }
 
-// module funcapp 'funcapp.bicep' = {
-//   name: 'funcapp'
-//   scope: rg
-// }
+module funcapp 'funcapp.bicep' = {
+  name: 'funcapp'
+  scope: rg
+}
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -59,10 +59,10 @@ module apim 'apim.bicep' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -92,13 +92,13 @@ module apim 'apim.bicep' = {
 //   scope: rg
 // }
 
-// module swa 'swa.bicep' = {
-//   name: 'swa'
-//   scope: rg
-//   params: {
-//     token: token
-//   }
-// }
+module swa 'swa.bicep' = {
+  name: 'swa'
+  scope: rg
+  params: {
+    token: token
+  }
+}
 
 // module vmlinux 'vmlinux.bicep' = {
 //   name: 'vmlinux'
