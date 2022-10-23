@@ -44,12 +44,8 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module funcapp1 'funcapp1.bicep' = {
-  name: 'funcapp1'
-  scope: rg
-}
-module funcapp2 'funcapp2.bicep' = {
-  name: 'funcapp2'
+module funcapp 'funcapp.bicep' = {
+  name: 'funcapp'
   scope: rg
 }
 
