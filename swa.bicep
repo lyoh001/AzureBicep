@@ -12,7 +12,7 @@ resource static_web_apps 'Microsoft.Web/staticSites@2021-01-15' = {
     name: 'Free'
   }
   properties: {
-    repositoryUrl: 'https://github.com/lyoh001/EDASupplyChain.git'
+    repositoryUrl: 'https://github.com/lyoh001/EDAHospitalityBookings.git'
     branch: 'main'
     repositoryToken: token
     buildProperties: {
