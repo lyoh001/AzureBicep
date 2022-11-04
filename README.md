@@ -31,4 +31,12 @@ Azure Bicep will deploy the following resources.
     - Web App
     - Web App Insights
 
+```
+AZURE_CREDENTIALS
+{
+    "clientId": "GUID",
+    "clientSecret": "SECRET",
+    "tenantId": "GUID"
+}
+```
 Ref: [Azure Bicep](https://github.com/Azure/bicep/)
