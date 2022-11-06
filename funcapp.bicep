@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param prefix string = replace(resourceGroup().name, 'rg', '')
+param prefix string = replace(resourceGroup().name, 'rg', 'ping')
 // param prefix string = concat(replace(resourceGroup().name, 'rg', ''), substring(newGuid(), 0, 7))
 
 resource function_storage_account 'Microsoft.Storage/storageAccounts@2019-06-01' = {
@@ -133,7 +133,7 @@ resource function_app 'Microsoft.Web/sites@2020-06-01' = {
         }
         {
           name: 'FUNCTIONS_EXTENSION_VERSION'
-          value: '~3'
+          value: '~4'
         }
       ]
     }

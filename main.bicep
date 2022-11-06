@@ -59,10 +59,10 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-module logicapps 'logicapps.bicep' = {
-  name: 'logicapps'
-  scope: rg
-}
+// module logicapps 'logicapps.bicep' = {
+//   name: 'logicapps'
+//   scope: rg
+// }
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -92,13 +92,13 @@ module logicapps 'logicapps.bicep' = {
 //   scope: rg
 // }
 
-module swa 'swa.bicep' = {
-  name: 'swa'
-  scope: rg
-  params: {
-    token: token
-  }
-}
+// module swa 'swa.bicep' = {
+//   name: 'swa'
+//   scope: rg
+//   params: {
+//     token: token
+//   }
+// }
 
 // module vmlinux 'vmlinux.bicep' = {
 //   name: 'vmlinux'
