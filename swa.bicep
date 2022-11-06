@@ -16,7 +16,7 @@ resource static_web_apps 'Microsoft.Web/staticSites@2021-01-15' = {
     branch: 'main'
     repositoryToken: token
     buildProperties: {
-      apiLocation: 'api'
+      apiLocation: ''
       appLocation: '/'
       appArtifactLocation: ''
       skipGithubActionWorkflowGeneration: true
