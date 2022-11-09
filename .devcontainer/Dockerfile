@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get install ca-certificates -y \
     && apt-get install apt-transport-https -y \
     && apt-get install lsb-release -y \
+    && apt-get install htop -y \
     && apt-get install zsh -y \
     && apt-get install tzdata -y \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
@@ -42,7 +43,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && npm install -g aws-cdk \
     && npm install -g cdktf-cli \
     && npm install -g @azure/static-web-apps-cli \
-    && npm install -g azure-functions-core-tools@3 --unsafe-perm true \
+    && npm install -g azure-functions-core-tools@4 --unsafe-perm true \
     && python3 -m pip install --upgrade pip \
     && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
