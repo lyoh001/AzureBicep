@@ -44,7 +44,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && npm install -g cdktf-cli \
     && npm install -g @azure/static-web-apps-cli \
     && npm install -g azure-functions-core-tools@4 --unsafe-perm true \
-    && python3 -m pip install --upgrade pip \
     && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 EXPOSE 7000
