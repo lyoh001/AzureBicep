@@ -5,12 +5,12 @@ on: [push]
 
 env:
   AZURE_DEPLOYMENT_NAME: "vickk73"
-  AZURE_RESOURCEGROUP_NAME: "vickk73mlrg"
+  AZURE_RESOURCEGROUP_NAME: "vickk73rg"
   # AZURE_RESOURCEGROUP_NAME: "{{ env.AZURE_DEPLOYMENT_NAME }}rg"
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
-  # AZURE_DEPLOYMENT_REGION: "australiaeast"
+  AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
-  AZURE_DEPLOYMENT_REGION: "centralus"
+  # AZURE_DEPLOYMENT_REGION: "centralus"
 
 jobs:
   lint: 
