@@ -12,13 +12,13 @@ env:
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
   # AZURE_DEPLOYMENT_REGION: "centralus"
 
-jobs:
-  lint: 
-    runs-on: ubuntu-latest
-    steps:
-    - name: Run Bicep linter
-      uses: actions/checkout@main
-      run: az bicep build --file deploy/main.bicep
+# jobs:
+#   lint: 
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Run Bicep linter
+#       uses: actions/checkout@main
+#       run: az bicep build --file deploy/main.bicep
 
   # validate: 
   #   runs-on: ubuntu-latest
