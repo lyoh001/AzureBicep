@@ -4,9 +4,9 @@ on: [push]
 # on: [workflow_dispatch]
 
 env:
-  AZURE_DEPLOYMENT_NAME: "vickk73test"
-  AZURE_RESOURCEGROUP_NAME: "vickk73testrg"
-  # AZURE_RESOURCEGROUP_NAME: "{{ env.AZURE_DEPLOYMENT_NAME }}rg"
+  AZURE_DEPLOYMENT_NAME: "vickk73"
+  # AZURE_RESOURCEGROUP_NAME: "vickk73testrg"
+  AZURE_RESOURCEGROUP_NAME: "{{ env.AZURE_DEPLOYMENT_NAME }}rg"
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
