@@ -5,8 +5,8 @@ on: [push]
 
 env:
   AZURE_DEPLOYMENT_NAME: "vickk73test"
-  # AZURE_RESOURCEGROUP_NAME: "vickk73testrg"
-  AZURE_RESOURCEGROUP_NAME: "{{ env.AZURE_DEPLOYMENT_NAME }}rg"
+  AZURE_RESOURCEGROUP_NAME: "vickk73testrg"
+  # AZURE_RESOURCEGROUP_NAME: "{{ env.AZURE_DEPLOYMENT_NAME }}rg"
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
@@ -39,7 +39,7 @@ jobs:
       with:
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main.bicep
+        template: ./main.bicep
         deploymentMode: Validate
   
   # preview:
