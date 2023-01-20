@@ -39,4 +39,7 @@ AZURE_CREDENTIALS
     "tenantId": "GUID"
 }
 ```
+
 Ref: [Azure Bicep](https://github.com/Azure/bicep/)
+
+Ref: [Azure OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
