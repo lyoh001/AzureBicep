@@ -1,17 +1,16 @@
 name: Azure Bicep
 
-on: [push]
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "vickk111"
-  # AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
+  AZURE_DEPLOYMENT_NAME: "lyoh001"
+  AZURE_DEPLOYMENT_REGION: "centralus"
   # AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
-  AZURE_DEPLOYMENT_REGION: "centralus"
 
 jobs:
   lint: 
@@ -33,7 +32,6 @@ jobs:
     - name: Run Azure Login
       uses: azure/login@v1
       with:
-        # creds: ${{ secrets.AZURE_CREDENTIALS }}
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
