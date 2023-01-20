@@ -2,6 +2,10 @@ name: Azure Bicep
 
 on: [push]
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   AZURE_DEPLOYMENT_NAME: "vickk111"
   # AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_GUID }}
