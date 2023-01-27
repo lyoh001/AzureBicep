@@ -12,11 +12,11 @@ resource static_web_apps 'Microsoft.Web/staticSites@2021-01-15' = {
     name: 'Free'
   }
   properties: {
-    repositoryUrl: 'https://github.com/lyoh001/AzureTest.git'
+    repositoryUrl: 'https://github.com/lyoh001/AzureStaticWebApps.git'
     branch: 'main'
     repositoryToken: token
     buildProperties: {
-      apiLocation: 'api'
+      apiLocation: ''
       appLocation: '/'
       appArtifactLocation: ''
       skipGithubActionWorkflowGeneration: true
