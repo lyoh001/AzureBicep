@@ -12,7 +12,7 @@ resource mysql_server 'Microsoft.DBforMySQL/flexibleServers@2021-05-01' = {
     tier: 'Burstable'
   }
   properties: {
-    administratorLogin: 'operations'
+    administratorLogin: 'lyoh001'
     administratorLoginPassword: password
     backup: {
       backupRetentionDays: 1
@@ -46,7 +46,7 @@ resource mysql_firewall_rule 'Microsoft.DBforMySQL/flexibleServers/firewallRules
   name: '${prefix}mysqlfwrule'
   parent: mysql_server
   properties: {
-    startIpAddress: '120.21.98.50'
-    endIpAddress: '120.21.98.50'
+    startIpAddress: '120.21.103.168'
+    endIpAddress: '120.21.103.168'
   }
 }

@@ -44,10 +44,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module funcapp 'funcapp.bicep' = {
-  name: 'funcapp'
-  scope: rg
-}
+// module funcapp 'funcapp.bicep' = {
+//   name: 'funcapp'
+//   scope: rg
+// }
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -74,13 +74,13 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-// module mysql 'mysql.bicep' = {
-//   name: 'mysql'
-//   scope: rg
-//   params: {
-//     password: password
-//   }
-// }
+module mysql 'mysql.bicep' = {
+  name: 'mysql'
+  scope: rg
+  params: {
+    password: password
+  }
+}
 
 // module storage 'storage.bicep' = {
 //   name: 'storage'
@@ -92,13 +92,13 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-module swa 'swa.bicep' = {
-  name: 'swa'
-  scope: rg
-  params: {
-    token: token
-  }
-}
+// module swa 'swa.bicep' = {
+//   name: 'swa'
+//   scope: rg
+//   params: {
+//     token: token
+//   }
+// }
 
 // module vmlinux 'vmlinux.bicep' = {
 //   name: 'vmlinux'
