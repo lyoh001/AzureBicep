@@ -10,7 +10,8 @@
 		"ms-dotnettools.vscode-dotnet-runtime",
 		"ms-vscode.azure-account",
 		"ms-azuretools.vscode-azureresourcegroups",
-		"ms-azuretools.vscode-bicep"
+		"ms-azuretools.vscode-bicep",
+		"VisualStudioExptTeam.vscodeintellicode"
 	],
 	"forwardPorts": [
 		7000
