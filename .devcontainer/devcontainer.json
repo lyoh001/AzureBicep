@@ -7,11 +7,11 @@
 		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
 	"extensions": [
+        "EasyCodeAI.chatgpt-gpt4-gpt3-vscode",
 		"ms-dotnettools.vscode-dotnet-runtime",
 		"ms-vscode.azure-account",
 		"ms-azuretools.vscode-azureresourcegroups",
-		"ms-azuretools.vscode-bicep",
-		"VisualStudioExptTeam.vscodeintellicode"
+		"ms-azuretools.vscode-bicep"
 	],
 	"forwardPorts": [
 		7000
