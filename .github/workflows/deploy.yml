@@ -1,30 +1,21 @@
 name: Azure Bicep
 
-on: [workflow_dispatch]
+# on: [workflow_dispatch]
+on: [push]
 
 permissions:
   id-token: write
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "vickk80"
+  AZURE_DEPLOYMENT_NAME: "vickk90"
   # AZURE_DEPLOYMENT_REGION: "centralus"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
 
 jobs:
-  lint: 
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout GitHub Action
-      uses: actions/checkout@main
-    
-    - name: Run Bicep linter
-      run: az bicep build --file ./main.bicep
-  
   setup-env:
     runs-on: ubuntu-latest
-    needs: [lint]
     steps:
     - name: Install Azure Bicep
       uses: azure/CLI@v1
@@ -32,10 +23,20 @@ jobs:
         inlineScript: |
           az config set bicep.use_binary_from_path=false
           az bicep install
+
+  lint: 
+    runs-on: ubuntu-latest
+    needs: [setup-env]
+    steps:
+    - name: Checkout GitHub Action
+      uses: actions/checkout@main
+    
+    - name: Run Bicep linter
+      run: az bicep build --file ./main.bicep
     
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: [setup-env]
+    needs: [lint]
     steps:
     - name: Checkout GitHub Action
       uses: actions/checkout@main
