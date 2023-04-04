@@ -59,10 +59,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -74,13 +74,13 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module mysql 'mysql.bicep' = {
-  name: 'mysql'
-  scope: rg
-  params: {
-    password: password
-  }
-}
+// module mysql 'mysql.bicep' = {
+//   name: 'mysql'
+//   scope: rg
+//   params: {
+//     password: password
+//   }
+// }
 
 // module storage 'storage.bicep' = {
 //   name: 'storage'
