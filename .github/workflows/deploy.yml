@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install Azure Bicep
-      uses: azure/CLI@v2
+      uses: azure/CLI@v1
       with:
         inlineScript: |
           az config set bicep.use_binary_from_path=False
@@ -50,8 +50,10 @@ jobs:
         allow-no-subscriptions: true
 
     - name: Run Azure Bicep Deploy
-      uses: azure/CLI@v2
+      uses: azure/CLI@v1
       with:
         inlineScript: |
+          az config set bicep.use_binary_from_path=False
+          az bicep install
           az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           az deployment sub create -f ./main.bicep -n ${{ env.AZURE_DEPLOYMENT_NAME }} -l ${{ env.AZURE_DEPLOYMENT_REGION }} -p token=${{ secrets.GIT_HUB_CREDENTIALS }} password=${{ secrets.ADMIN_CREDENTIALS }}
