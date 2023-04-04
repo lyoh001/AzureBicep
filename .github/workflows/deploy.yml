@@ -21,7 +21,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az config set bicep.use_binary_from_path=false
+          az config set bicep.use_binary_from_path=False
           az bicep install
 
   lint: 
