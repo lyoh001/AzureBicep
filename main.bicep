@@ -74,13 +74,13 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module mysql 'mysql.bicep' = {
-//   name: 'mysql'
-//   scope: rg
-//   params: {
-//     password: password
-//   }
-// }
+module mysql 'mysql.bicep' = {
+  name: 'mysql'
+  scope: rg
+  params: {
+    password: password
+  }
+}
 
 // module storage 'storage.bicep' = {
 //   name: 'storage'
