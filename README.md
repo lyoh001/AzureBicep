@@ -19,12 +19,15 @@ Azure Bicep will deploy the following resources.
 - Log Analytics Workspace
 - Logic Apps
 - Machine Learning Workspace Compute
+- MySQL Flexible Server
 - Recovery Services Vault
 - Servicebus namespace & queue
 - Static Web Apps
+- Stream Analytics
 - Storage Account
 - Stream Analytics
-- VM (Ubuntu 20.04 LTS)
+- Virtual Machine (Ubuntu 20.04 LTS)
+- Virtual Machine (Windows Server)
 - Vnet (Subnets & NSG)
 - Web App
     - Web App Service Plan
