@@ -9,6 +9,6 @@ resource databricks 'Microsoft.Databricks/workspaces@2023-02-01' = {
     name: 'standard'
   }
   properties: {
-    managedResourceGroupId: '${subscription().id}/resourceGroups/${prefix}dbws'
+    managedResourceGroupId: '${subscription().id}/resourceGroups/${prefix}rg'
   }
 }
