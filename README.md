@@ -9,6 +9,8 @@ Azure Bicep will deploy the following resources.
 - Automation Account
 - CosmosDb
 - Data Factory v2.0
+- Data Lake Store
+- Databricks
 - Eventhub namespace & Eventhub
 - Function App
     - Function Storage Account
