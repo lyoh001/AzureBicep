@@ -5,7 +5,7 @@ param prefix string = replace(resourceGroup().name, 'rg', '')
 resource datalake 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   kind: 'StorageV2'
   location: location
-  name: '${prefix}strg'
+  name: '${prefix}dl'
   properties: {
     accessTier: 'Hot'
     isHnsEnabled: true
