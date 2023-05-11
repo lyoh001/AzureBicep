@@ -1,8 +1,6 @@
 # Azure - BICEP
-## 1. Introduction
-### 1.1	Overview
-
-Azure Bicep will deploy the following resources.
+## Overview
+This repository contains Azure Bicep code for deploying various Azure resources as Infrastructure as Code. The code in this repository will deploy the following resources:
 - Resource Group
 - Azure Monitoring via Eventgrid & event subscription
 - API Management
@@ -36,15 +34,24 @@ Azure Bicep will deploy the following resources.
     - Web App
     - Web App Insights
 
+## Usage
+To deploy these resources using Azure Bicep, you will need to provide the following information in your deployment:
+
+- Azure Tenant ID: tenant-id
+- Azure Subscription ID: subscription-id
+- Azure Client ID: client-id
+
+You can securely store these values by using GitHub Secrets or other secure methods. Here is an example of how to reference these values in your Bicep deployment:
+
 ```
-AZURE_CREDENTIALS
-{
-    "clientId": "GUID",
-    "clientSecret": "SECRET",
-    "tenantId": "GUID"
-}
+tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+client-id: ${{ secrets.AZURE_CLIENT_ID }}
 ```
 
-Ref: [Azure Bicep](https://github.com/Azure/bicep/)
+## References
+- [Azure OpenID Connect](https://learn.microsoft.com/en-us/azure/active-directory/workload-identities/workload-identity-federation-create-trust?pivots=identity-wif-apps-methods-azp)
 
-Ref: [Azure OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
+- [Azure Bicep](https://github.com/Azure/bicep/)
+
+Feel free to explore the code and customize it according to your specific requirements. If you have any questions or need further assistance, please refer to the references or reach out for support.
