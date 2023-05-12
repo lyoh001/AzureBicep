@@ -44,10 +44,10 @@ module datafactory 'datafactory.bicep' = {
   scope: rg
 }
 
-module datalake 'datalake.bicep' = {
-  name: 'datalake'
-  scope: rg
-}
+// module datalake 'datalake.bicep' = {
+//   name: 'datalake'
+//   scope: rg
+// }
 
 // module eventhub 'eventhub.bicep' = {
 //   name: 'eventhub'
@@ -69,10 +69,10 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
