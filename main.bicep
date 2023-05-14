@@ -34,30 +34,30 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module databricks 'databricks.bicep' = {
-//   name: 'databricks'
-//   scope: rg
-// }
+module databricks 'databricks.bicep' = {
+  name: 'databricks'
+  scope: rg
+}
 
-// module datafactory 'datafactory.bicep' = {
-//   name: 'datafactory'
-//   scope: rg
-// }
+module datafactory 'datafactory.bicep' = {
+  name: 'datafactory'
+  scope: rg
+}
 
-// module datalake 'datalake.bicep' = {
-//   name: 'datalake'
-//   scope: rg
-// }
+module datalake 'datalake.bicep' = {
+  name: 'datalake'
+  scope: rg
+}
 
 // module eventhub 'eventhub.bicep' = {
 //   name: 'eventhub'
 //   scope: rg
 // }
 
-// module funcapp 'funcapp.bicep' = {
-//   name: 'funcapp'
-//   scope: rg
-// }
+module funcapp 'funcapp.bicep' = {
+  name: 'funcapp'
+  scope: rg
+}
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -69,10 +69,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -84,13 +84,13 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module mysql 'mysql.bicep' = {
-  name: 'mysql'
-  scope: rg
-  params: {
-    password: password
-  }
-}
+// module mysql 'mysql.bicep' = {
+//   name: 'mysql'
+//   scope: rg
+//   params: {
+//     password: password
+//   }
+// }
 
 // module storage 'storage.bicep' = {
 //   name: 'storage'
