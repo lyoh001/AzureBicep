@@ -34,20 +34,20 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module databricks 'databricks.bicep' = {
-  name: 'databricks'
-  scope: rg
-}
+// module databricks 'databricks.bicep' = {
+//   name: 'databricks'
+//   scope: rg
+// }
 
-module datafactory 'datafactory.bicep' = {
-  name: 'datafactory'
-  scope: rg
-}
+// module datafactory 'datafactory.bicep' = {
+//   name: 'datafactory'
+//   scope: rg
+// }
 
-module datalake 'datalake.bicep' = {
-  name: 'datalake'
-  scope: rg
-}
+// module datalake 'datalake.bicep' = {
+//   name: 'datalake'
+//   scope: rg
+// }
 
 // module eventhub 'eventhub.bicep' = {
 //   name: 'eventhub'
@@ -69,10 +69,10 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-module logicapps 'logicapps.bicep' = {
-  name: 'logicapps'
-  scope: rg
-}
+// module logicapps 'logicapps.bicep' = {
+//   name: 'logicapps'
+//   scope: rg
+// }
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
