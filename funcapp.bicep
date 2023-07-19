@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param prefix string = replace(resourceGroup().name, 'rg', '')
+param prefix string = replace(resourceGroup().name, 'rg', 'serverless')
 // param prefix string = concat(replace(resourceGroup().name, 'rg', ''), substring(newGuid(), 0, 7))
 
 resource function_storage_account 'Microsoft.Storage/storageAccounts@2019-06-01' = {
@@ -51,22 +51,22 @@ resource function_blob_services 'Microsoft.Storage/storageAccounts/blobServices@
 resource function_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   name: '${prefix}funcasp'
   location: location
-  kind: 'linux'
-  sku: {
-    name: 'B1'
-    tier: 'Basic'
-    size: 'B1'
-    family: 'B'
-    capacity: 1
-  }
-  // kind: 'functionapp'
+  // kind: 'linux'
   // sku: {
-  //   name: 'Y1'
-  //   tier: 'Dynamic'
-  //   size: 'Y1'
-  //   family: 'Y'
-  //   capacity: 0
+  //   name: 'B1'
+  //   tier: 'Basic'
+  //   size: 'B1'
+  //   family: 'B'
+  //   capacity: 1
   // }
+  kind: 'functionapp'
+  sku: {
+    name: 'Y1'
+    tier: 'Dynamic'
+    size: 'Y1'
+    family: 'Y'
+    capacity: 0
+  }
   properties: {
     perSiteScaling: false
     maximumElasticWorkerCount: 1
