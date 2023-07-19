@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param prefix string = replace(resourceGroup().name, 'rg', 'serverless')
+param prefix string = replace(resourceGroup().name, 'rg', 'srverless')
 // param prefix string = concat(replace(resourceGroup().name, 'rg', ''), substring(newGuid(), 0, 7))
 
 resource function_storage_account 'Microsoft.Storage/storageAccounts@2019-06-01' = {
@@ -175,8 +175,8 @@ resource function_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     scmType: 'None'
     use32BitWorkerProcess: false
     webSocketsEnabled: false
-    // alwaysOn: false
-    alwaysOn: true
+    alwaysOn: false
+    // alwaysOn: true
     managedPipelineMode: 'Integrated'
     virtualApplications: [
       {
