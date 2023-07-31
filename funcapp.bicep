@@ -51,22 +51,22 @@ resource function_blob_services 'Microsoft.Storage/storageAccounts/blobServices@
 resource function_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   name: '${prefix}funcasp'
   location: location
-  kind: 'linux'
-  sku: {
-    name: 'B3'
-    tier: 'Basic'
-    size: 'B3'
-    family: 'B'
-    capacity: 1
-  }
-  // kind: 'functionapp'
+  // kind: 'linux'
   // sku: {
-  //   name: 'Y1'
-  //   tier: 'Dynamic'
-  //   size: 'Y1'
-  //   family: 'Y'
-  //   capacity: 0
+  //   name: 'B1'
+  //   tier: 'Basic'
+  //   size: 'B1'
+  //   family: 'B'
+  //   capacity: 1
   // }
+  kind: 'functionapp'
+  sku: {
+    name: 'Y1'
+    tier: 'Dynamic'
+    size: 'Y1'
+    family: 'Y'
+    capacity: 0
+  }
   properties: {
     perSiteScaling: false
     maximumElasticWorkerCount: 1
@@ -175,8 +175,8 @@ resource function_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     scmType: 'None'
     use32BitWorkerProcess: false
     webSocketsEnabled: false
-    // alwaysOn: false
-    alwaysOn: true
+    alwaysOn: false
+    // alwaysOn: true
     managedPipelineMode: 'Integrated'
     virtualApplications: [
       {
