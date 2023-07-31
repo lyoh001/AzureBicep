@@ -175,8 +175,8 @@ resource function_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     scmType: 'None'
     use32BitWorkerProcess: false
     webSocketsEnabled: false
-    alwaysOn: false
-    // alwaysOn: true
+    // alwaysOn: false
+    alwaysOn: true
     managedPipelineMode: 'Integrated'
     virtualApplications: [
       {
