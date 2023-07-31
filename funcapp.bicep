@@ -51,22 +51,22 @@ resource function_blob_services 'Microsoft.Storage/storageAccounts/blobServices@
 resource function_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   name: '${prefix}funcasp'
   location: location
-  // kind: 'linux'
-  // sku: {
-  //   name: 'B3'
-  //   tier: 'Basic'
-  //   size: 'B3'
-  //   family: 'B'
-  //   capacity: 1
-  // }
-  kind: 'functionapp'
+  kind: 'linux'
   sku: {
-    name: 'Y1'
-    tier: 'Dynamic'
-    size: 'Y1'
-    family: 'Y'
-    capacity: 0
+    name: 'B3'
+    tier: 'Basic'
+    size: 'B3'
+    family: 'B'
+    capacity: 1
   }
+  // kind: 'functionapp'
+  // sku: {
+  //   name: 'Y1'
+  //   tier: 'Dynamic'
+  //   size: 'Y1'
+  //   family: 'Y'
+  //   capacity: 0
+  // }
   properties: {
     perSiteScaling: false
     maximumElasticWorkerCount: 1
