@@ -54,10 +54,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module funcapp 'funcapp.bicep' = {
-//   name: 'funcapp'
-//   scope: rg
-// }
+module funcapp 'funcapp.bicep' = {
+  name: 'funcapp'
+  scope: rg
+}
 
 // module keyvault 'keyvault.bicep' = {
 //   name: 'keyvault'
@@ -102,13 +102,13 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module swa 'swa.bicep' = {
-  name: 'swa'
-  scope: rg
-  params: {
-    token: token
-  }
-}
+// module swa 'swa.bicep' = {
+//   name: 'swa'
+//   scope: rg
+//   params: {
+//     token: token
+//   }
+// }
 
 // module vmlinux 'vmlinux.bicep' = {
 //   name: 'vmlinux'
