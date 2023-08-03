@@ -102,13 +102,13 @@ module funcapp 'funcapp.bicep' = {
 //   scope: rg
 // }
 
-// module swa 'swa.bicep' = {
-//   name: 'swa'
-//   scope: rg
-//   params: {
-//     token: token
-//   }
-// }
+module swa 'swa.bicep' = {
+  name: 'swa'
+  scope: rg
+  params: {
+    token: token
+  }
+}
 
 // module vmlinux 'vmlinux.bicep' = {
 //   name: 'vmlinux'
