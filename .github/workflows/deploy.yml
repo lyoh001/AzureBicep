@@ -7,10 +7,10 @@ permissions:
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "azuretest"
+  AZURE_DEPLOYMENT_NAME: "vickk88"
   # AZURE_DEPLOYMENT_REGION: "centralus"
-  AZURE_DEPLOYMENT_REGION: "eastasia"
-  # AZURE_DEPLOYMENT_REGION: "australiaeast"
+  # AZURE_DEPLOYMENT_REGION: "eastasia"
+  AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
 
 jobs:
