@@ -7,7 +7,7 @@ permissions:
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "vickk94"
+  AZURE_DEPLOYMENT_NAME: "vickk73ai"
   # AZURE_DEPLOYMENT_REGION: "centralus"
   # AZURE_DEPLOYMENT_REGION: "eastasia"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
