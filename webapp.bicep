@@ -25,18 +25,6 @@ resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   }
 }
 
-resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
-  kind: 'web'
-  location: location
-  name: '${prefix}webinsights'
-  properties: {
-    Application_Type: 'web'
-    IngestionMode: 'ApplicationInsights'
-    publicNetworkAccessForIngestion: 'Enabled'
-    publicNetworkAccessForQuery: 'Enabled'
-  }
-}
-
 resource web_app 'Microsoft.Web/sites@2020-06-01' = {
   location: location
   name: '${prefix}webapp'
@@ -146,3 +134,15 @@ resource web_app_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
     hostNameType: 'Verified'
   }
 }
+
+// resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
+//   kind: 'web'
+//   location: location
+//   name: '${prefix}webinsights'
+//   properties: {
+//     Application_Type: 'web'
+//     IngestionMode: 'ApplicationInsights'
+//     publicNetworkAccessForIngestion: 'Enabled'
+//     publicNetworkAccessForQuery: 'Enabled'
+//   }
+// }
