@@ -135,14 +135,14 @@ resource web_app_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
   }
 }
 
-resource web_app_github 'Microsoft.Web/sites/sourcecontrols@2022-09-01' = {
-  name: '${web_app.name}/web'
-  properties: {
-    repoUrl: 'https://github.com/lyoh001/AzureWebApps'
-    branch: 'main'
-    isManualIntegration: true
-  }
-}
+// resource web_app_github 'Microsoft.Web/sites/sourcecontrols@2022-09-01' = {
+//   name: '${web_app.name}/github'
+//   properties: {
+//     repoUrl: 'https://github.com/lyoh001/AzureWebApps'
+//     branch: 'main'
+//     isManualIntegration: true
+//   }
+// }
 
 // resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
 //   kind: 'web'
