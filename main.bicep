@@ -133,7 +133,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module webapp 'webapp.bicep' = {
-  name: 'webapp'
+module webapps 'webapps.bicep' = {
+  name: 'webapps'
   scope: rg
 }

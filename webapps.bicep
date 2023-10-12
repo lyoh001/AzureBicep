@@ -25,9 +25,9 @@ resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   }
 }
 
-resource web_app 'Microsoft.Web/sites@2020-06-01' = {
+resource web_apps 'Microsoft.Web/sites@2020-06-01' = {
   location: location
-  name: '${prefix}webapp'
+  name: '${prefix}webapps'
   kind: 'app,linux'
   properties: {
     enabled: true
@@ -60,7 +60,7 @@ resource web_app 'Microsoft.Web/sites@2020-06-01' = {
 }
 
 resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
-  name: '${web_app.name}/web'
+  name: '${web_apps.name}/web'
   properties: {
     numberOfWorkers: 1
     defaultDocuments: [
@@ -81,7 +81,7 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     httpLoggingEnabled: false
     logsDirectorySizeLimit: 35
     detailedErrorLoggingEnabled: false
-    publishingUsername: '$${web_app.name}'
+    publishingUsername: '$${web_apps.name}'
     azureStorageAccounts: {}
     scmType: 'None'
     use32BitWorkerProcess: true
@@ -128,15 +128,15 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
 }
 
 resource web_app_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
-  name: '${web_app.name}/${web_app.name}.azurewebsites.net'
+  name: '${web_apps.name}/${web_apps.name}.azurewebsites.net'
   properties: {
-    siteName: web_app.name
+    siteName: web_apps.name
     hostNameType: 'Verified'
   }
 }
 
 resource web_app_github 'Microsoft.Web/sites/sourcecontrols@2022-09-01' = {
-  name: '${web_app.name}/web'
+  name: '${web_apps.name}/web'
   properties: {
     repoUrl: 'https://github.com/lyoh001/AzureWebApps'
     branch: 'main'
