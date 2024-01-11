@@ -75,7 +75,7 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
       'hostingstart.html'
     ]
     netFrameworkVersion: 'v4.0'
-    linuxFxVersion: 'Python|3.8'
+    linuxFxVersion: 'Python|3.10'
     requestTracingEnabled: false
     remoteDebuggingEnabled: false
     httpLoggingEnabled: false
@@ -135,14 +135,14 @@ resource web_app_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
   }
 }
 
-// resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
-//   kind: 'web'
-//   location: location
-//   name: '${prefix}webinsights'
-//   properties: {
-//     Application_Type: 'web'
-//     IngestionMode: 'ApplicationInsights'
-//     publicNetworkAccessForIngestion: 'Enabled'
-//     publicNetworkAccessForQuery: 'Enabled'
-//   }
-// }
+resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
+  kind: 'web'
+  location: location
+  name: '${prefix}webinsights'
+  properties: {
+    Application_Type: 'web'
+    IngestionMode: 'ApplicationInsights'
+    publicNetworkAccessForIngestion: 'Enabled'
+    publicNetworkAccessForQuery: 'Enabled'
+  }
+}
