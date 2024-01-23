@@ -25,20 +25,20 @@ resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   }
 }
 
-resource web_app 'Microsoft.Web/sites@2020-06-01' = {
+resource web_app_be 'Microsoft.Web/sites@2020-06-01' = {
   location: location
-  name: '${prefix}webapp'
+  name: '${prefix}bewebapp'
   kind: 'app,linux'
   properties: {
     enabled: true
     hostNameSslStates: [
       {
-        name: '${prefix}webapp.azurewebsites.net'
+        name: '${prefix}bewebapp.azurewebsites.net'
         sslState: 'Disabled'
         hostType: 'Standard'
       }
       {
-        name: '${prefix}webapp.scm.azurewebsites.net'
+        name: '${prefix}bewebapp.scm.azurewebsites.net'
         sslState: 'Disabled'
         hostType: 'Repository'
       }
@@ -59,8 +59,8 @@ resource web_app 'Microsoft.Web/sites@2020-06-01' = {
   }
 }
 
-resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
-  name: '${web_app.name}/web'
+resource web_app_be_config 'Microsoft.Web/sites/config@2020-06-01' = {
+  name: '${web_app_be.name}/web'
   properties: {
     numberOfWorkers: 1
     defaultDocuments: [
@@ -81,7 +81,7 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     httpLoggingEnabled: false
     logsDirectorySizeLimit: 35
     detailedErrorLoggingEnabled: false
-    publishingUsername: '$${web_app.name}'
+    publishingUsername: '$${web_app_be.name}'
     azureStorageAccounts: {}
     scmType: 'None'
     use32BitWorkerProcess: true
@@ -127,22 +127,22 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
   }
 }
 
-resource web_app_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
-  name: '${web_app.name}/${web_app.name}.azurewebsites.net'
+resource web_app_be_binding 'Microsoft.Web/sites/hostNameBindings@2020-06-01' = {
+  name: '${web_app_be.name}/${web_app_be.name}.azurewebsites.net'
   properties: {
-    siteName: web_app.name
+    siteName: web_app_be.name
     hostNameType: 'Verified'
   }
 }
 
-resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
-  kind: 'web'
-  location: location
-  name: '${prefix}webinsights'
-  properties: {
-    Application_Type: 'web'
-    IngestionMode: 'ApplicationInsights'
-    publicNetworkAccessForIngestion: 'Enabled'
-    publicNetworkAccessForQuery: 'Enabled'
-  }
-}
+// resource web_app_insights 'Microsoft.Insights/components@2020-02-02-preview' = {
+//   kind: 'web'
+//   location: location
+//   name: '${prefix}webinsights'
+//   properties: {
+//     Application_Type: 'web'
+//     IngestionMode: 'ApplicationInsights'
+//     publicNetworkAccessForIngestion: 'Enabled'
+//     publicNetworkAccessForQuery: 'Enabled'
+//   }
+// }
