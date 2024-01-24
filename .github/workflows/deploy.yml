@@ -7,10 +7,10 @@ permissions:
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "azuretest3"
-  # AZURE_DEPLOYMENT_REGION: "centralus"
+  AZURE_DEPLOYMENT_NAME: "azuretest4"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
   # AZURE_DEPLOYMENT_REGION: "australiasoutheast"
+  # AZURE_DEPLOYMENT_REGION: "centralus"
 
 jobs:
   lint:
