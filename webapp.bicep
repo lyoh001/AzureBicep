@@ -7,9 +7,9 @@ resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   location: location
   kind: 'linux'
   sku: {
-    name: 'B1'
+    name: 'B3'
     tier: 'Basic'
-    size: 'B1'
+    size: 'B3'
     family: 'B'
     capacity: 1
   }
