@@ -2,28 +2,33 @@ param location string = resourceGroup().location
 param prefix string = replace(resourceGroup().name, 'rg', '')
 // param prefix string = concat(replace(resourceGroup().name, 'rg', ''), substring(newGuid(), 0, 7))
 
-resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
-  name: '${prefix}webasp'
-  location: location
-  kind: 'linux'
-  sku: {
-    name: 'B3'
-    tier: 'Basic'
-    size: 'B3'
-    family: 'B'
-    capacity: 1
-  }
-  properties: {
-    perSiteScaling: false
-    maximumElasticWorkerCount: 1
-    isSpot: false
-    reserved: true
-    isXenon: false
-    hyperV: false
-    targetWorkerCount: 0
-    targetWorkerSizeId: 0
-  }
+resource web_app_service 'Microsoft.Web/serverfarms@2020-06-01' existing = {
+  name: 'vickk73test79webasp'
+  scope: resourceGroup('vickk73test79rg')
 }
+
+// resource web_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
+//   name: '${prefix}webasp'
+//   location: location
+//   kind: 'linux'
+//   sku: {
+//     name: 'B3'
+//     tier: 'Basic'
+//     size: 'B3'
+//     family: 'B'
+//     capacity: 1
+//   }
+//   properties: {
+//     perSiteScaling: false
+//     maximumElasticWorkerCount: 1
+//     isSpot: false
+//     reserved: true
+//     isXenon: false
+//     hyperV: false
+//     targetWorkerCount: 0
+//     targetWorkerSizeId: 0
+//   }
+// }
 
 resource web_app_be 'Microsoft.Web/sites@2020-06-01' = {
   location: location
