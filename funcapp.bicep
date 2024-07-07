@@ -149,7 +149,6 @@ resource function_app 'Microsoft.Web/sites@2020-06-01' = {
 }
 
 resource function_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
-  // location: location
   name: '${function_app.name}/web'
   properties: {
     numberOfWorkers: 1
