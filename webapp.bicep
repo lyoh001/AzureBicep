@@ -64,7 +64,18 @@ resource web_app 'Microsoft.Web/sites@2020-06-01' = {
     reserved: true
     isXenon: false
     hyperV: false
-    siteConfig: {}
+    siteConfig: {
+      appSettings: [
+        {
+          name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
+          value: web_app_insights.properties.InstrumentationKey
+        }
+        {
+          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
+          value: 'InstrumentationKey=${web_app_insights.properties.InstrumentationKey}'
+        }
+      ]
+    }
     scmSiteAlsoStopped: false
     clientAffinityEnabled: false
     clientCertEnabled: false
@@ -103,7 +114,7 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     scmType: 'None'
     use32BitWorkerProcess: true
     webSocketsEnabled: false
-    alwaysOn: true
+    alwaysOn: false
     managedPipelineMode: 'Integrated'
     virtualApplications: [
       {

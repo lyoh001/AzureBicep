@@ -7,10 +7,8 @@
 		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
 	"extensions": [
-		"ms-dotnettools.vscode-dotnet-runtime",
-		"ms-vscode.azure-account",
-		"ms-azuretools.vscode-azureresourcegroups",
-		"ms-azuretools.vscode-bicep"
+		"ms-azuretools.vscode-bicep",
+		"ms-dotnettools.vscode-dotnet-runtime"
 	],
 	"forwardPorts": [
 		7000
