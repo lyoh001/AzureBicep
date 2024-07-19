@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "azureexel"
+  AZURE_DEPLOYMENT_NAME: "vickk73test001"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
 
 jobs:
@@ -16,20 +16,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout GitHub Action
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: Run Bicep linter
       run: az bicep build --file ./main.bicep
 
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: [lint]
+    needs: lint
+
     steps:
     - name: Checkout GitHub Action
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: Run Azure Login
-      uses: azure/login@v1
+      uses: azure/login@v2
       with:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
@@ -37,7 +38,7 @@ jobs:
         allow-no-subscriptions: true
 
     - name: Run Azure Bicep Deploy
-      uses: azure/CLI@v1
+      uses: azure/CLI@v2
       with:
         inlineScript: |
           az config set bicep.use_binary_from_path=False
