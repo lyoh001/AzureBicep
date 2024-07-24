@@ -103,7 +103,7 @@ resource web_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
       'hostingstart.html'
     ]
     netFrameworkVersion: 'v4.0'
-    linuxFxVersion: 'Python|3.10'
+    linuxFxVersion: 'Python|3.11'
     requestTracingEnabled: false
     remoteDebuggingEnabled: false
     httpLoggingEnabled: false
