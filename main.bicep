@@ -69,10 +69,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-// module logicapps 'logicapps.bicep' = {
-//   name: 'logicapps'
-//   scope: rg
-// }
+module logicapps 'logicapps.bicep' = {
+  name: 'logicapps'
+  scope: rg
+}
 
 // module rsv 'rsv.bicep' = {
 //   name: 'rsv'
@@ -133,7 +133,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 //   scope: rg
 // }
 
-module webapp 'webapp.bicep' = {
-  name: 'webapp'
-  scope: rg
-}
+// module webapp 'webapp.bicep' = {
+//   name: 'webapp'
+//   scope: rg
+// }
