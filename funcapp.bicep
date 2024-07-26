@@ -61,11 +61,11 @@ resource function_app_service 'Microsoft.Web/serverFarms@2020-06-01' = {
   // }
   kind: 'functionapp'
   sku: {
-    name: 'FC1'
-    tier: 'FlexConsumption'
-    // size: 'Y1'
-    // family: 'Y'
-    // capacity: 0
+    name: 'Y1'
+    tier: 'Dynamic'
+    size: 'Y1'
+    family: 'Y'
+    capacity: 0
   }
   properties: {
     perSiteScaling: false
@@ -174,8 +174,8 @@ resource function_app_config 'Microsoft.Web/sites/config@2020-06-01' = {
     scmType: 'None'
     use32BitWorkerProcess: false
     webSocketsEnabled: false
-    // alwaysOn: false
-    alwaysOn: true
+    alwaysOn: false
+    // alwaysOn: true
     managedPipelineMode: 'Integrated'
     virtualApplications: [
       {
