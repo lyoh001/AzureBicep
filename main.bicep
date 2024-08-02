@@ -101,7 +101,7 @@ module logicapps 'logicapps.bicep' = {
 //   name: 'streamanalytics'
 //   scope: rg
 // }
-\
+
 // module swa 'swa.bicep' = {
 //   name: 'swa'
 //   scope: rg
