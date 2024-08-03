@@ -1,14 +1,14 @@
 name: Azure Bicep
 
-on: [push]
-# on: [workflow_dispatch]
+# on: [push]
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
   contents: read
 
 env:
-  AZURE_DEPLOYMENT_NAME: "vickk73test01"
+  AZURE_DEPLOYMENT_NAME: "vickk73test1"
   AZURE_DEPLOYMENT_REGION: "australiaeast"
 
 jobs:
