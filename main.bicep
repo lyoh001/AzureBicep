@@ -19,10 +19,10 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   location: deployment().location
 }
 
-module apim 'apim.bicep' = {
-  name: 'apim'
-  scope: rg
-}
+// module apim 'apim.bicep' = {
+//   name: 'apim'
+//   scope: rg
+// }
 
 module automationaccount 'automationaccount.bicep' = {
   name: 'automationaccount'
